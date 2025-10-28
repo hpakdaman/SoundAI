@@ -1,24 +1,82 @@
+# Laravel & Environment
 *.log
 .DS_Store
 .env
-.env.backup
-.env.production
+.env.*
+!.env.example
 .phpactor.json
 .phpunit.result.cache
+
+# IDE & Editors
 /.fleet
 /.idea
 /.nova
 /.phpunit.cache
 /.vscode
 /.zed
-/auth.json
+/.history
+
+# Dependencies
 /node_modules
+/vendor
+/auth.json
+composer.lock
+package-lock.json
+
+# Build & Compiled
 /public/build
 /public/hot
 /public/storage
+npm-debug.log
+yarn-error.log
+*.css.map
+
+# Storage & Cache
 /storage/*.key
 /storage/pail
-/vendor
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+/storage/logs/*
+/storage/debugbar
+!/storage/framework/cache/.gitignore
+!/storage/framework/sessions/.gitignore
+!/storage/framework/testing/.gitignore
+!/storage/framework/views/.gitignore
+!/storage/logs/.gitignore
+
+# Bootstrap Cache
+/bootstrap/cache/*
+!/bootstrap/cache/.gitignore
+
+# Testing
+/coverage
+/.phpunit.cache
+phpunit.xml
+
+# Homestead & Laravel Tools
 Homestead.json
 Homestead.yaml
+auth.json
+
+# Uploads & Media
+/public/upload/*
+!/public/upload/.gitignore
+
+# Backups & Archives
+*.zip
+*.tar.gz
+*.apk
+*.mmdb
+
+# Misc
 Thumbs.db
+.git copy/
+
+# Claude Settings
+.claude/settings.local.json
+
+# Scripts temp files
+/test
+/examples
