@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('instrument_id')->constrained('music_instruments')->onDelete('cascade');
             $table->timestamp('created_at')->useCurrent();
 
-            $table->unique(['composition_id', 'instrument_id']);
+            $table->unique(['composition_id', 'instrument_id'], 'composition_instrument_unique');
             $table->index('composition_id');
             $table->index('instrument_id');
         });

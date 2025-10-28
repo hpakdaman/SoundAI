@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('vibe_id')->constrained('music_vibes')->onDelete('cascade');
             $table->timestamp('created_at')->useCurrent();
 
-            $table->unique(['composition_id', 'vibe_id']);
+            $table->unique(['composition_id', 'vibe_id'], 'composition_vibe_unique');
             $table->index('composition_id');
             $table->index('vibe_id');
         });
