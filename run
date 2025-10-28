@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# Laravel AI Music Composer - Development Server Runner
+# This script manages the complete development environment
+
+echo "🚀 Starting Laravel AI Music Composer development environment..."
+
+# Start MySQL database first
+echo "📦 Starting MySQL database..."
+sh ./scripts/start-mysql.sh
+
+# Kill any processes using development ports
+echo "🧹 Cleaning up development ports..."
+sh ./scripts/kill-ports.sh
+
+echo ""
+echo "🎵 Starting Laravel AI Music Composer server..."
+echo "📍 Server will be available at: http://127.0.0.1:8000"
+echo "🔥 Vite dev server at: http://localhost:5173"
+echo ""
+echo "Press Ctrl+C to stop all services"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+
+# Function to cleanup on exit
+cleanup() {
+  echo ""
+  echo "🛑 Stopping all development services..."
+  sh ./scripts/kill-ports.sh
+  echo "✅ Development environment stopped."
+  exit 0
+}
+
+# Set trap to cleanup on script exit
+trap cleanup INT TERM
+
+# Run the composer dev command which starts all services concurrently
+composer run-script dev --timeout=0
