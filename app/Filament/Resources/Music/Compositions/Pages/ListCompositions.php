@@ -13,7 +13,7 @@ class ListCompositions extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            // CreateAction removed - compositions are created via AI generation only
         ];
     }
 }
