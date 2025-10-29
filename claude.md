@@ -2,6 +2,21 @@
 
 This is a **self-hosted CMS platform** (similar to WordPress) that users can install on their own servers/hosting.
 
+## ⚠️ CRITICAL: Database Management Rules
+
+**NEVER** use these commands:
+- ❌ `php artisan migrate:fresh`
+- ❌ `php artisan migrate:refresh`
+- ❌ `php artisan db:wipe`
+- ❌ Any command that drops or resets the entire database
+
+**ONLY** use these commands:
+- ✅ `php artisan migrate` - Run new migrations
+- ✅ `php artisan migrate:rollback` - Rollback the last migration batch
+- ✅ `php artisan migrate:rollback --step=N` - Rollback N migration batches
+
+**Reason**: This is a production-style application with seeded data (genres, vibes, instruments) and potentially user-generated content. Dropping the database would destroy all data.
+
 ### Framework Usage Guidelines
 - **Frontend (Public-facing website)**: Use **Livewire 3.x** + **Alpine.js 3.x** only
 - **Admin Panel**: Use **Filament 4.x** exclusively
