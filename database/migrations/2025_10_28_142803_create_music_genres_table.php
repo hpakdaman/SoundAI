@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name', 100)->unique();
             $table->string('slug', 100)->unique();
             $table->text('description')->nullable();
-            $table->string('icon')->nullable();
             $table->text('prompt_keywords')->nullable();
             $table->boolean('is_active')->default(true);
             $table->integer('sort_order')->default(0);

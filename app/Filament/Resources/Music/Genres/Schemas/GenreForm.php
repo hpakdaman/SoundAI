@@ -25,9 +25,6 @@ class GenreForm
                 Textarea::make('description')
                     ->rows(3)
                     ->columnSpanFull(),
-                TextInput::make('icon')
-                    ->label('Icon (emoji or path)')
-                    ->helperText('Enter an emoji or icon path'),
                 Textarea::make('prompt_keywords')
                     ->rows(3)
                     ->helperText('Keywords to enhance AI prompt generation. Leave blank to use the name.')

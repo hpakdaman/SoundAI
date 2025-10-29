@@ -11,7 +11,6 @@ use App\Models\Music\Composition;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -20,7 +19,15 @@ class CompositionResource extends Resource
 {
     protected static ?string $model = Composition::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-musical-note';
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Music';
+
+    protected static ?int $navigationSort = 4;
+
+    protected static ?string $navigationLabel = 'Compositions';
+
+    protected static ?string $recordTitleAttribute = 'title';
 
     public static function form(Schema $schema): Schema
     {
@@ -43,9 +50,14 @@ class CompositionResource extends Resource
     {
         return [
             'index' => ListCompositions::route('/'),
-            'create' => CreateComposition::route('/create'),
-            'edit' => EditComposition::route('/{record}/edit'),
+            // 'create' => CreateComposition::route('/create'), // Disabled - compositions created via AI generation only
+            // 'edit' => EditComposition::route('/{record}/edit'),
         ];
+    }
+
+    public static function canCreate(): bool
+    {
+        return false; // Compositions are created via AI generation, not manually
     }
 
     public static function getRecordRouteBindingEloquentQuery(): Builder

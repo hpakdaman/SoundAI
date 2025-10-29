@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('slug', 100)->unique();
             $table->enum('category', ['keys', 'strings', 'percussion', 'wind', 'electronic', 'vocal', 'other']);
             $table->text('description')->nullable();
-            $table->string('icon')->nullable();
             $table->text('prompt_keywords')->nullable();
             $table->boolean('is_active')->default(true);
             $table->integer('sort_order')->default(0);

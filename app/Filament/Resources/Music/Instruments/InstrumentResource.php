@@ -18,7 +18,13 @@ class InstrumentResource extends Resource
 {
     protected static ?string $model = Instrument::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-speaker-wave';
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Music';
+
+    protected static ?int $navigationSort = 3;
+
+    protected static ?string $navigationLabel = 'Instruments';
 
     public static function form(Schema $schema): Schema
     {

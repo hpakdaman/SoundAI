@@ -15,7 +15,7 @@
 
 ---
 
-## <¯ Current Priority: Core Music Features
+## <ï¿½ Current Priority: Core Music Features
 
 ### Phase 2: Database & Models (Next)
 - [ ] Create `compositions` table migration
@@ -69,11 +69,6 @@
   - Drag-and-drop reordering
   - Parent-child relationships
 
-- [ ] Create AI Model Resource
-  - Model configuration
-  - API credentials (encrypted)
-  - Cost management
-  - Enable/disable models
 
 - [ ] Create Generation History Resource
   - View all generation attempts
@@ -261,7 +256,7 @@
 
 ---
 
-## =Ë Immediate Next Steps (Priority Order)
+## =ï¿½ Immediate Next Steps (Priority Order)
 
 1. **Create Database Migrations** (compositions, genres, ai_models, generation_history)
 2. **Create Eloquent Models** with relationships
@@ -271,7 +266,7 @@
 
 ---
 
-## =€ Quick Wins (Can be done anytime)
+## =ï¿½ Quick Wins (Can be done anytime)
 
 - [ ] Customize Filament theme colors
 - [ ] Add logo and branding
@@ -299,7 +294,7 @@
 
 ---
 
-## =Ý Notes
+## =ï¿½ Notes
 
 - Always run `php artisan shield:generate` after creating new resources
 - Keep documentation up to date in claude.md
